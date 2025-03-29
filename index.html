@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛晓光教授课题组 - 武汉大学</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground">
+    <div id="root">
+        <!-- 导航栏 -->
+        <nav class="bg-white shadow-sm fixed w-full z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <a href="#" class="text-xl font-bold text-gray-900">
+                        <span data-lang="cn">牛晓光教授课题组</span>
+                        <span data-lang="en" class="hidden">Prof. Xiaoguang Niu's Lab</span>
+                    </a>
+                    
+                    <!-- 导航链接 -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#profile" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn">个人简介</span>
+                            <span data-lang="en" class="hidden">Profile</span>
+                        </a>
+                        <a href="#research" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn">研究方向</span>
+                            <span data-lang="en" class="hidden">Research</span>
+                        </a>
+                        <a href="#publications" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn">学术成果</span>
+                            <span data-lang="en" class="hidden">Publications</span>
+                        </a>
+                        <a href="#team" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn">团队招生</span>
+                            <span data-lang="en" class="hidden">Join Us</span>
+                        </a>
+                        <a href="#contact" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn">联系方式</span>
+                            <span data-lang="en" class="hidden">Contact</span>
+                        </a>
+                        <button id="lang-switch" class="text-gray-600 hover:text-gray-900">
+                            <span data-lang="cn" class="hidden">EN</span>
+                            <span data-lang="en">中文</span>
+                        </button>
+                    </div>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button class="md:hidden p-2" id="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单 -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#profile" class="block px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn">个人简介</span>
+                        <span data-lang="en" class="hidden">Profile</span>
+                    </a>
+                    <a href="#research" class="block px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn">研究方向</span>
+                        <span data-lang="en" class="hidden">Research</span>
+                    </a>
+                    <a href="#publications" class="block px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn">学术成果</span>
+                        <span data-lang="en" class="hidden">Publications</span>
+                    </a>
+                    <a href="#team" class="block px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn">团队招生</span>
+                        <span data-lang="en" class="hidden">Join Us</span>
+                    </a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn">联系方式</span>
+                        <span data-lang="en" class="hidden">Contact</span>
+                    </a>
+                    <button id="mobile-lang-switch" class="block w-full text-left px-3 py-2 text-gray-600 hover:text-gray-900">
+                        <span data-lang="cn" class="hidden">EN</span>
+                        <span data-lang="en">中文</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <main class="pt-16">
+            <!-- Hero部分 -->
+            <section id="home" class="py-16 md:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 md:px-6">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-2/3 mb-10 md:mb-0 md:pr-10">
+                            <h1 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                                <span data-lang="cn">牛晓光教授课题组</span>
+                                <span data-lang="en" class="hidden">Prof. Xiaoguang Niu's Research Lab</span>
+                            </h1>
+                            <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                                <span data-lang="cn">致力于移动感知与智能计算、物联网、空间智能认知与位置服务、计算机网络、网络安全与隐私保护等领域的前沿学术研究</span>
+                                <span data-lang="en" class="hidden">Dedicated to cutting-edge academic research in mobile sensing and intelligent computing, IoT, spatial intelligence and location services, computer networks, and network security and privacy protection</span>
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#profile" class="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-md">
+                                    <span data-lang="cn">了解更多</span>
+                                    <span data-lang="en" class="hidden">Learn More</span>
+                                </a>
+                                <a href="#team" class="border border-gray-300 px-6 py-2 rounded-md hover:bg-gray-50">
+                                    <span data-lang="cn">加入我们</span>
+                                    <span data-lang="en" class="hidden">Join Us</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/3">
+                            <div class="bg-white p-5 rounded-lg shadow-md">
+                                <h2 class="font-heading text-xl font-bold text-gray-900 mb-4">
+                                    <span data-lang="cn">研究成果</span>
+                                    <span data-lang="en" class="hidden">Research Highlights</span>
+                                </h2>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <svg class="w-4 h-4 text-gray-600 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span class="text-gray-600">
+                                            <span data-lang="cn">高精度移动感知技术</span>
+                                            <span data-lang="en" class="hidden">High-precision mobile sensing technology</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="w-4 h-4 text-gray-600 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span class="text-gray-600">
+                                            <span data-lang="cn">智能物联网系统</span>
+                                            <span data-lang="en" class="hidden">Intelligent IoT systems</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="w-4 h-4 text-gray-600 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span class="text-gray-600">
+                                            <span data-lang="cn">空间智能与位置服务</span>
+                                            <span data-lang="en" class="hidden">Spatial intelligence and location services</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 个人简介部分 -->
+            <section id="profile" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                        <span data-lang="cn">个人简介</span>
+                        <span data-lang="en" class="hidden">Profile</span>
+                    </h2>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/3">
+                            <img src="img/profile.jpg" alt="牛晓光教授" class="rounded-lg shadow-md w-full">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                <span data-lang="cn">牛晓光 教授</span>
+                                <span data-lang="en" class="hidden">Prof. Xiaoguang Niu</span>
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                <span data-lang="cn">武汉大学计算机学院，博士生导师</span>
+                                <span data-lang="en" class="hidden">School of Computer Science, Wuhan University, PhD Supervisor</span>
+                            </p>
+                            <div class="space-y-4 text-gray-600">
+                                <p data-lang="cn">牛晓光，武汉大学计算机学院教授，博士生导师。主要研究方向包括移动感知与智能计算、物联网技术、空间智能认知与位置服务等。在IEEE TMC、IEEE TPAMI等国际顶级期刊发表多篇论文，主持多项国家自然科学基金项目。</p>
+                                <p data-lang="en" class="hidden">Xiaoguang Niu is a Professor at the School of Computer Science, Wuhan University, and a PhD supervisor. His main research interests include mobile sensing and intelligent computing, IoT technology, spatial intelligence and location services. He has published multiple papers in top international journals such as IEEE TMC and IEEE TPAMI, and has led several National Natural Science Foundation of China projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 研究方向部分 -->
+            <section id="research" class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                        <span data-lang="cn">研究方向</span>
+                        <span data-lang="en" class="hidden">Research</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 移动感知与智能计算 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <svg class="w-5 h-5 mr-2 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                                <h3 class="text-lg font-medium text-gray-900">
+                                    <span data-lang="cn">移动感知与智能计算</span>
+                                    <span data-lang="en" class="hidden">Mobile Sensing and Intelligent Computing</span>
+                                </h3>
+                            </div>
+                            <p class="text-gray-600">
+                                <span data-lang="cn">研究移动设备感知技术与智能计算方法，实现智能化的移动应用与服务。</span>
+                                <span data-lang="en" class="hidden">Research on mobile device sensing technology and intelligent computing methods to achieve intelligent mobile applications and services.</span>
+                            </p>
+                        </div>
+
+                        <!-- 物联网技术 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <svg class="w-5 h-5 mr-2 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <h3 class="text-lg font-medium text-gray-900">
+                                    <span data-lang="cn">物联网技术</span>
+                                    <span data-lang="en" class="hidden">IoT Technology</span>
+                                </h3>
+                            </div>
+                            <p class="text-gray-600">
+                                <span data-lang="cn">研究物联网系统架构、通信协议、智能感知等关键技术。</span>
+                                <span data-lang="en" class="hidden">Research on IoT system architecture, communication protocols, intelligent sensing and other key technologies.</span>
+                            </p>
+                        </div>
+
+                        <!-- 空间智能认知与位置服务 -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <svg class="w-5 h-5 mr-2 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <h3 class="text-lg font-medium text-gray-900">
+                                    <span data-lang="cn">空间智能认知与位置服务</span>
+                                    <span data-lang="en" class="hidden">Spatial Intelligence and Location Services</span>
+                                </h3>
+                            </div>
+                            <p class="text-gray-600">
+                                <span data-lang="cn">研究空间信息处理、位置感知与服务等技术，实现智能化的空间认知与定位服务。</span>
+                                <span data-lang="en" class="hidden">Research on spatial information processing, location awareness and service technologies to achieve intelligent spatial cognition and positioning services.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学术成果部分 -->
+            <section id="publications" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                        <span data-lang="cn">学术成果</span>
+                        <span data-lang="en" class="hidden">Publications</span>
+                    </h2>
+                    
+                    <!-- 论文过滤器 -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <button class="px-4 py-2 rounded-md bg-gray-900 text-white" data-type="all">
+                            <span data-lang="cn">全部论文</span>
+                            <span data-lang="en" class="hidden">All Papers</span>
+                        </button>
+                        <button class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50" data-type="sci">
+                            <span data-lang="cn">SCI论文</span>
+                            <span data-lang="en" class="hidden">SCI Papers</span>
+                        </button>
+                        <button class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50" data-type="conference">
+                            <span data-lang="cn">会议论文</span>
+                            <span data-lang="en" class="hidden">Conference Papers</span>
+                        </button>
+                    </div>
+
+                    <!-- 论文列表 -->
+                    <div class="space-y-6">
+                        <!-- 论文内容将由JavaScript动态生成 -->
+                    </div>
+
+                    <!-- 查看更多按钮 -->
+                    <div class="text-center mt-8">
+                        <button class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800">
+                            <span data-lang="cn">查看更多论文</span>
+                            <span data-lang="en" class="hidden">View More Papers</span>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 组内成员部分 -->
+            <section id="members" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="container mx-auto px-4">
+                        <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                            <span data-lang="cn">组内成员</span>
+                            <span data-lang="en">Team Members</span>
+                        </h2>
+                        
+                        <!-- 成员头像预览（一排） -->
+                        <div class="members-preview">
+                            <div class="member-avatar-preview" data-category="faculty">
+                                <img src="img/profile.jpg" alt="Faculty">
+                            </div>
+                            <div class="member-avatar-preview" data-category="phd">
+                                <img src="img/phd1.jpg" alt="PhD Students">
+                            </div>
+                            <div class="member-avatar-preview" data-category="master">
+                                <img src="img/master1.jpg" alt="Master Students">
+                            </div>
+                            <div class="member-avatar-preview" data-category="undergrad">
+                                <img src="img/undergrad1.jpg" alt="Undergraduate Students">
+                            </div>
+                        </div>
+                        
+                        <!-- 成员详细信息（默认隐藏） -->
+                        <div class="members-detail">
+                            <!-- 教师/导师 -->
+                            <div class="member-category" id="faculty">
+                                <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                    <span data-lang="cn">教师</span>
+                                    <span data-lang="en">Faculty</span>
+                                </h3>
+                                <div class="member-grid">
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/profile.jpg" alt="Prof. Xiaoguang Niu" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">牛晓光</span>
+                                                    <span data-lang="en">Xiaoguang Niu</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">教授，博士生导师</span>
+                                                    <span data-lang="en">Professor, PhD Supervisor</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：移动感知、物联网、空间智能</span>
+                                            <span data-lang="en">Research: Mobile Sensing, IoT, Spatial Intelligence</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 博士生 -->
+                            <div class="member-category mt-8" id="phd">
+                                <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                    <span data-lang="cn">博士研究生</span>
+                                    <span data-lang="en">PhD Students</span>
+                                </h3>
+                                <div class="member-grid">
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/phd1.jpg" alt="PhD Student" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">张三</span>
+                                                    <span data-lang="en">Zhang San</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">2021级博士生</span>
+                                                    <span data-lang="en">PhD Student (2021-present)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：移动感知与计算</span>
+                                            <span data-lang="en">Research: Mobile Sensing and Computing</span>
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/phd2.jpg" alt="PhD Student" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">李四</span>
+                                                    <span data-lang="en">Li Si</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">2022级博士生</span>
+                                                    <span data-lang="en">PhD Student (2022-present)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：物联网安全</span>
+                                            <span data-lang="en">Research: IoT Security</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 硕士生 -->
+                            <div class="member-category mt-8" id="master">
+                                <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                    <span data-lang="cn">硕士研究生</span>
+                                    <span data-lang="en">Master Students</span>
+                                </h3>
+                                <div class="member-grid">
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/master1.jpg" alt="Master Student" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">王五</span>
+                                                    <span data-lang="en">Wang Wu</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">2022级硕士生</span>
+                                                    <span data-lang="en">Master Student (2022-present)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：空间智能与位置服务</span>
+                                            <span data-lang="en">Research: Spatial Intelligence and Location Services</span>
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/master2.jpg" alt="Master Student" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">赵六</span>
+                                                    <span data-lang="en">Zhao Liu</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">2023级硕士生</span>
+                                                    <span data-lang="en">Master Student (2023-present)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：智能计算</span>
+                                            <span data-lang="en">Research: Intelligent Computing</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 本科生 -->
+                            <div class="member-category mt-8" id="undergrad">
+                                <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                    <span data-lang="cn">本科生</span>
+                                    <span data-lang="en">Undergraduate Students</span>
+                                </h3>
+                                <div class="member-grid">
+                                    <div class="member-card">
+                                        <div class="flex items-center mb-4">
+                                            <img src="img/undergrad1.jpg" alt="Undergraduate Student" class="w-16 h-16 rounded-full mr-4 object-cover">
+                                            <div>
+                                                <h4 class="text-lg font-medium text-gray-900">
+                                                    <span data-lang="cn">孙七</span>
+                                                    <span data-lang="en">Sun Qi</span>
+                                                </h4>
+                                                <p class="text-gray-600">
+                                                    <span data-lang="cn">2020级本科生</span>
+                                                    <span data-lang="en">Undergraduate (2020-present)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 text-sm">
+                                            <span data-lang="cn">研究方向：移动应用开发</span>
+                                            <span data-lang="en">Research: Mobile Application Development</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系方式部分 -->
+            <section id="contact" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                        <span data-lang="cn">联系方式</span>
+                        <span data-lang="en" class="hidden">Contact</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                <span data-lang="cn">联系信息</span>
+                                <span data-lang="en" class="hidden">Contact Information</span>
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 text-gray-600 mr-3 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="text-gray-900 font-medium">Email</p>
+                                        <p class="text-gray-600">xiaoguang.niu@whu.edu.cn</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 text-gray-600 mr-3 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="text-gray-900 font-medium">
+                                            <span data-lang="cn">地址</span>
+                                            <span data-lang="en" class="hidden">Address</span>
+                                        </p>
+                                        <p class="text-gray-600">
+                                            <span data-lang="cn">湖北省武汉市武汉大学计算机学院</span>
+                                            <span data-lang="en" class="hidden">School of Computer Science, Wuhan University, Wuhan, Hubei, China</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-gray-900 mb-4">
+                                <span data-lang="cn">留言咨询</span>
+                                <span data-lang="en" class="hidden">Send a Message</span>
+                            </h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2">
+                                        <span data-lang="cn">姓名</span>
+                                        <span data-lang="en" class="hidden">Name</span>
+                                    </label>
+                                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">
+                                        <span data-lang="cn">留言内容</span>
+                                        <span data-lang="en" class="hidden">Message</span>
+                                    </label>
+                                    <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"></textarea>
+                                </div>
+                                <button type="submit" class="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800">
+                                    <span data-lang="cn">发送</span>
+                                    <span data-lang="en" class="hidden">Send</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 页脚 -->
+            <footer class="bg-gray-900 text-white py-8">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="mb-4 md:mb-0">
+                            <p>© 2023 
+                                <span data-lang="cn">牛晓光教授课题组</span>
+                                <span data-lang="en" class="hidden">Prof. Xiaoguang Niu's Lab</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <span data-lang="cn">武汉大学计算机学院</span>
+                                <span data-lang="en" class="hidden">School of Computer Science, Wuhan University</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

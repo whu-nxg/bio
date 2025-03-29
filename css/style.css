@@ -1,0 +1,138 @@
+/* 自定义字体 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+/* 基础变量 */
+:root {
+    --background: #ffffff;
+    --foreground: #333333;
+    --primary: #1a202c;
+    --secondary: #4a5568;
+    --accent: #3182ce;
+}
+
+/* 全局样式 */
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.font-heading {
+    font-family: 'Noto Serif SC', serif;
+}
+
+/* 平滑过渡效果 */
+a, button {
+    transition: all 0.2s ease-in-out;
+}
+
+/* 响应式图片 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 导航栏激活状态 */
+.nav-active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 团队成员卡片样式 */
+.team-card {
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 圆形头像 */
+.rounded-full {
+    object-fit: cover;
+}
+
+/* 联系方式图标 */
+.contact-icon {
+    color: var(--accent);
+}
+
+/* 成员展示区域样式 */
+.members-preview {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.member-avatar-preview {
+    flex: 0 0 auto;
+    width: 60px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.member-avatar-preview:hover {
+    transform: scale(1.1);
+}
+
+.member-avatar-preview img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+
+.member-avatar-preview.active img {
+    border-color: var(--accent);
+}
+
+.members-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.members-detail.active {
+    max-height: 2000px;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.member-card {
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
