@@ -32,13 +32,102 @@ function renderPublications() {
 // 删除重复的 publications 变量和 renderPublications 函数
 // 确保只保留一个 papers 变量
 
-// 论文数据 - 中英文版本
 const papers = {
     'all': [
         {
-            titleEn: 'UltraMotion: High-precision Ultrasonic Arm Tracking for Real-world Exercises',
+            titleEn: 'Dynamic selection for reconstructing instance-dependent noisy labels',
+            titleCn: '动态选择用于重构实例依赖的噪声标签',
+            authorsEn: 'J Yang, X Niu, Y Xu, Z Zhang, G Guo, S Drew, R Chen',
+            authorsCn: '杨杰, 牛晓光, 徐阳, 张志, 郭光忆, Steve Drew, 陈锐志',
+            journal: 'Pattern Recognition',
+            year: '2024',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'Label-Expanded Feature Debiasing for Single Domain Generalization',
+            titleCn: '标签扩展特征去偏用于单域泛化',
+            authorsEn: 'J Yang, L Jing, Y Xu, S Wu, S Drew, X Niu',
+            authorsCn: '杨杰, 景丽, 徐阳, 吴少武, Steve Drew, 牛晓光',
+            journal: 'International Conference on Pattern Recognition',
+            year: '2024',
+            doi: '',
+            type: 'conference'
+        },
+        {
+            titleEn: 'Smartphone Indoor Fusion Localization with Trust Region-Based Magnetic Matching',
+            titleCn: '基于信任区域磁匹配的智能手机室内融合定位',
+            authorsEn: 'Y Zhu, Y Jia, K Zou, X Niu',
+            authorsCn: '朱阳, 贾阳, 邹凯毅, 牛晓光',
+            journal: 'International Conference on Wireless Artificial Intelligent Computing',
+            year: '2024',
+            doi: '',
+            type: 'conference'
+        },
+        {
+            titleEn: 'Federated Learning with Client Availability Budgets',
+            titleCn: '具有客户端可用性预算的联邦学习',
+            authorsEn: 'Y Bao, S Drew, X Wang, J Zhou, X Niu',
+            authorsCn: '鲍阳, Steve Drew, 王晓龙, 周杰, 牛晓光',
+            journal: 'GLOBECOM 2023-2023 IEEE Global Communications Conference',
+            year: '2023',
+            doi: '',
+            type: 'conference'
+        },
+        {
+            titleEn: 'Application Status, Development and Future Trend of High-Precision Indoor Navigation and Tracking',
+            titleCn: '高精度室内导航与跟踪的应用现状、发展及未来趋势',
+            authorsEn: 'R CHEN, G GUO, L CHEN, X NIU',
+            authorsCn: '陈锐志, 郭光忆, 陈亮, 牛晓光',
+            journal: 'Geomatics and Information Science of Wuhan University',
+            year: '2023',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'USDNL: Uncertainty-based single dropout in noisy label learning',
+            titleCn: 'USDNL：基于不确定性的噪声标签学习单点退出方法',
+            authorsEn: 'Y Xu, X Niu, J Yang, S Drew, J Zhou, R Chen',
+            authorsCn: '徐阳, 牛晓光, 杨杰, Steve Drew, 周杰, 陈锐志',
+            journal: 'Proceedings of the AAAI Conference on Artificial Intelligence',
+            year: '2023',
+            doi: '',
+            type: 'conference'
+        },
+        {
+            titleEn: 'ChirpTracker: A precise-location-aware system for acoustic tag using single smartphone',
+            titleCn: 'ChirpTracker：使用单个智能手机的精确位置感知声标签系统',
+            authorsEn: 'X Lin, R Chen, L Huang, Z Liu, X Niu, G Guo, Z Li, L Qian',
+            authorsCn: '林晓, 陈锐志, 黄亮, 刘志, 牛晓光, 郭光忆, 李志, 钱亮',
+            journal: 'IEEE Internet of Things Journal',
+            year: '2023',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'Factor graph framework for smartphone indoor localization: Integrating data-driven PDR and Wi-Fi RTT/RSS ranging',
+            titleCn: '智能手机室内定位的因子图框架：集成数据驱动的PDR和Wi-Fi RTT/RSS测距',
+            authorsEn: 'G Guo, R Chen, X Niu, K Yan, S Xu, L Chen',
+            authorsCn: '郭光忆, 陈锐志, 牛晓光, 严凯, 徐松, 陈亮',
+            journal: 'IEEE Sensors Journal',
+            year: '2023',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'Large-scale indoor localization solution for pervasive smartphones using corrected acoustic signals and data-driven PDR',
+            titleCn: '使用校正的声学信号和数据驱动的PDR的广泛智能手机大规模室内定位解决方案',
+            authorsEn: 'G Guo, R Chen, K Yan, Z Li, L Qian, S Xu, X Niu, L Chen',
+            authorsCn: '郭光忆, 陈锐志, 严凯, 李志, 钱亮, 徐松, 牛晓光, 陈亮',
+            journal: 'IEEE Internet of Things Journal',
+            year: '2023',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'Ultramotion: High-precision ultrasonic arm tracking for real-world exercises',
             titleCn: 'UltraMotion：用于实际运动的高精度超声波手臂跟踪',
-            authorsEn: 'Xiaoguang Niu, Kaiyi Zou, Da Shen, Steve Drew, Shaowu Wu, Guangyi Guo, Ruizhi Chen',
+            authorsEn: 'X Niu, K Zou, D Shen, S Drew, S Wu, G Guo, R Chen',
             authorsCn: '牛晓光, 邹凯毅, 沈达, Steve Drew, 吴少武, 郭光忆, 陈锐志',
             journal: 'IEEE Transactions on Mobile Computing',
             year: '2023',
@@ -46,57 +135,48 @@ const papers = {
             type: 'sci'
         },
         {
-            titleEn: 'UltraMotion: High-precision Ultrasonic Arm Tracking for Real-world Exercises',
-            titleCn: 'UltraMotion：用于实际运动的高精度超声波手臂跟踪',
-            authorsEn: 'Xiaoguang Niu, Kaiyi Zou, Da Shen, Steve Drew, Shaowu Wu, Guangyi Guo, Ruizhi Chen',
-            authorsCn: '牛晓光, 邹凯毅, 沈达, Steve Drew, 吴少武, 郭光忆, 陈锐志',
-            journal: 'IEEE Transactions on Mobile Computing',
-            year: '2023',
-            doi: 'https://doi.org/10.1109/TMC.2023.3241077',
-            type: 'sci'
-        },
-        {
-            titleEn: 'USDNL: Uncertainty-based Single Dropout in Noisy Label Learning',
-            titleCn: 'USDNL：基于不确定性的噪声标签学习单点退出方法',
-            authorsEn: 'Xiaoguang Niu, Jianbin Jiao, Xiaolong Wang, Wei-Shi Zheng',
-            authorsCn: '牛晓光, 焦建斌, 王晓龙, 郑伟诗',
-            journal: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
-            year: '2023',
-            doi: 'https://doi.org/10.1109/TPAMI.2022.3231909',
-            type: 'sci'
-        },
-        {
-            titleEn: 'SenseLoc: Sensing Everyday Places and POIs using Ultrasonic Soundwaves',
-            titleCn: 'SenseLoc：使用超声波感知日常场所和兴趣点',
-            authorsEn: 'Xiaoguang Niu, Qiang Zhai, Yue Zhang, Weiping Shu, Victor C. M. Leung',
-            authorsCn: '牛晓光, 翟强, 张悦, 舒卫平, Victor C. M. Leung',
-            journal: 'ACM MobiCom',
+            titleEn: 'OCP: an OLAP-based bus crowdedness smart-perceiving mechanism for urban transportation',
+            titleCn: 'OCP：一种基于OLAP的城市交通公交拥挤智能感知机制',
+            authorsEn: 'S Gong, D Liu, MZA Bhuiyan, X Niu',
+            authorsCn: '龚松, 刘达, MZA Bhuiyan, 牛晓光',
+            journal: 'Connection Science',
             year: '2022',
-            doi: 'https://doi.org/10.1145/3495243.3517017',
+            doi: '',
+            type: 'sci'
+        },
+        {
+            titleEn: 'MAGINS: Neural network inertial navigation system corrected by magnetic information',
+            titleCn: 'MAGINS：由磁信息校正的神经网络惯性导航系统',
+            authorsEn: 'C Qiu, Y Xu, Y Zhu, L Xie, D Shen, J Huang, X Niu',
+            authorsCn: '邱成, 徐阳, 朱阳, 谢亮, 沈达, 黄杰, 牛晓光',
+            journal: '2021 IEEE International Performance, Computing, and Communications',
+            year: '2021',
+            doi: '',
             type: 'conference'
         },
         {
-            titleEn: 'USDNL: Uncertainty-based Single Dropout in Noisy Label Learning',
-            titleCn: 'USDNL：基于不确定性的噪声标签学习单点退出方法',
-            authorsEn: 'Xiaoguang Niu, Jianbin Jiao, Xiaolong Wang, Wei-Shi Zheng',
-            authorsCn: '牛晓光, 焦建斌, 王晓龙, 郑伟诗',
-            journal: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
-            year: '2023',
-            doi: 'https://doi.org/10.1109/TPAMI.2022.3231909',
+            titleEn: 'A Comprehensive Survey on Local Differential Privacy (vol 2020, 8829523, 2020)',
+            titleCn: '关于局部差分隐私的综合调查（2020年，第8829523卷，2020年）',
+            authorsEn: 'X Xiong, S Liu, D Li, Z Cai, X Niu',
+            authorsCn: '熊晓, 刘松, 李达, 蔡志, 牛晓光',
+            journal: 'SECURITY AND COMMUNICATION NETWORKS',
+            year: '2021',
+            doi: '',
             type: 'sci'
         },
         {
-            titleEn: 'SenseLoc: Sensing Everyday Places and POIs using Ultrasonic Soundwaves',
-            titleCn: 'SenseLoc：使用超声波感知日常场所和兴趣点',
-            authorsEn: 'Xiaoguang Niu, Qiang Zhai, Yue Zhang, Weiping Shu, Victor C. M. Leung',
-            authorsCn: '牛晓光, 翟强, 张悦, 舒卫平, Victor C. M. Leung',
-            journal: 'ACM MobiCom',
-            year: '2022',
-            doi: 'https://doi.org/10.1145/3495243.3517017',
-            type: 'conference'
+            titleEn: 'A comprehensive survey on local differential privacy',
+            titleCn: '关于局部差分隐私的综合调查',
+            authorsEn: 'X Xiong, S Liu, D Li, Z Cai, X Niu',
+            authorsCn: '熊晓, 刘松, 李达, 蔡志, 牛晓光',
+            journal: 'Security and Communication Networks',
+            year: '2020',
+            doi: '',
+            type: 'sci'
         }
     ]
 };
+
 
 // 语言状态
 let currentLang = 'en';  // 默认为英文
