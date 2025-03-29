@@ -1,19 +1,3 @@
-// 论文数据
-const publications = [
-    {
-        id: 1,
-        title: "量子纠缠态在蛋白质折叠过程中的理论预测与实验验证",
-        authors: "张教授*, 李博士, 王教授 (*通讯作者)",
-        journal: "Nature Physics",
-        year: 2023,
-        doi: "10.1038/s41567-023-02045-1",
-        impact: 20.034,
-        citations: 28
-    },
-    // ... 其他论文数据
-];
-
-// 初始化页面
 document.addEventListener('DOMContentLoaded', function() {
     // 渲染论文列表
     renderPublications();
@@ -45,9 +29,22 @@ function renderPublications() {
 }
 
 // 论文展示相关功能
+// 删除重复的 publications 变量和 renderPublications 函数
+// 确保只保留一个 papers 变量
+
 // 论文数据 - 中英文版本
 const papers = {
     'all': [
+        {
+            titleEn: 'UltraMotion: High-precision Ultrasonic Arm Tracking for Real-world Exercises',
+            titleCn: 'UltraMotion：用于实际运动的高精度超声波手臂跟踪',
+            authorsEn: 'Xiaoguang Niu, Kaiyi Zou, Da Shen, Steve Drew, Shaowu Wu, Guangyi Guo, Ruizhi Chen',
+            authorsCn: '牛晓光, 邹凯毅, 沈达, Steve Drew, 吴少武, 郭光忆, 陈锐志',
+            journal: 'IEEE Transactions on Mobile Computing',
+            year: '2023',
+            doi: 'https://doi.org/10.1109/TMC.2023.3241077',
+            type: 'sci'
+        },
         {
             titleEn: 'UltraMotion: High-precision Ultrasonic Arm Tracking for Real-world Exercises',
             titleCn: 'UltraMotion：用于实际运动的高精度超声波手臂跟踪',
@@ -77,12 +74,36 @@ const papers = {
             year: '2022',
             doi: 'https://doi.org/10.1145/3495243.3517017',
             type: 'conference'
+        },
+        {
+            titleEn: 'USDNL: Uncertainty-based Single Dropout in Noisy Label Learning',
+            titleCn: 'USDNL：基于不确定性的噪声标签学习单点退出方法',
+            authorsEn: 'Xiaoguang Niu, Jianbin Jiao, Xiaolong Wang, Wei-Shi Zheng',
+            authorsCn: '牛晓光, 焦建斌, 王晓龙, 郑伟诗',
+            journal: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
+            year: '2023',
+            doi: 'https://doi.org/10.1109/TPAMI.2022.3231909',
+            type: 'sci'
+        },
+        {
+            titleEn: 'SenseLoc: Sensing Everyday Places and POIs using Ultrasonic Soundwaves',
+            titleCn: 'SenseLoc：使用超声波感知日常场所和兴趣点',
+            authorsEn: 'Xiaoguang Niu, Qiang Zhai, Yue Zhang, Weiping Shu, Victor C. M. Leung',
+            authorsCn: '牛晓光, 翟强, 张悦, 舒卫平, Victor C. M. Leung',
+            journal: 'ACM MobiCom',
+            year: '2022',
+            doi: 'https://doi.org/10.1145/3495243.3517017',
+            type: 'conference'
         }
     ]
 };
 
 // 语言状态
 let currentLang = 'en';  // 默认为英文
+
+// 控制论文显示数量
+let showAllPapers = false;
+const initialPaperCount = 3;
 
 // 初始化页面
 document.addEventListener('DOMContentLoaded', function() {
@@ -120,8 +141,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // 设置过滤器事件
     setupFilterButtons();
     
-    // 设置查看更多按钮
-    setupViewMoreButton();
+    // 添加"查看更多"按钮的点击事件
+    const viewMoreButton = document.getElementById('view-more-papers');
+    if (viewMoreButton) {
+        viewMoreButton.addEventListener('click', function() {
+            showAllPapers = !showAllPapers; // 切换显示状态
+            // 获取当前选中的论文类型
+            const activeFilterButton = document.querySelector('#publications button.bg-gray-900');
+            const type = activeFilterButton ? activeFilterButton.getAttribute('data-type') : 'all';
+            updatePapers(type);
+            updateViewMoreButtonText(); // 更新按钮文本
+        });
+    }
     
     // 平滑滚动设置
     setupSmoothScroll();
@@ -178,11 +209,45 @@ function generatePaperHTML(paper) {
     `;
 }
 
+// 更新"查看更多"按钮的状态
+function updateViewMoreButton(totalCount) {
+    const viewMoreButton = document.getElementById('view-more-papers');
+    if (viewMoreButton) {
+        // 始终显示按钮，并根据 showAllPapers 状态更新文本
+        viewMoreButton.style.display = 'inline-flex';
+        updateViewMoreButtonText();
+    }
+}
+
+// 更新"查看更多"按钮的文本
+function updateViewMoreButtonText() {
+    const viewMoreButton = document.getElementById('view-more-papers');
+    if (viewMoreButton) {
+        if (showAllPapers) {
+            viewMoreButton.querySelector('span[data-lang="cn"]').textContent = '收起';
+            viewMoreButton.querySelector('span[data-lang="en"]').textContent = 'Collapse';
+        } else {
+            viewMoreButton.querySelector('span[data-lang="cn"]').textContent = '查看更多论文';
+            viewMoreButton.querySelector('span[data-lang="en"]').textContent = 'View More Papers';
+        }
+    }
+}
+
 // 更新论文列表显示
 function updatePapers(type) {
-    const paperList = document.querySelector('#publications .space-y-6');
+    const paperList = document.querySelector('#publications-list');
     if (paperList) {
-        paperList.innerHTML = papers[type].map(generatePaperHTML).join('');
+        // 根据类型筛选论文
+        const filteredPapers = papers[type] || papers.all;
+        
+        // 根据 showAllPapers 决定显示多少篇论文
+        const papersToShow = showAllPapers ? filteredPapers : filteredPapers.slice(0, initialPaperCount);
+        
+        // 生成HTML
+        paperList.innerHTML = papersToShow.map(generatePaperHTML).join('');
+        
+        // 更新按钮状态
+        updateViewMoreButton(filteredPapers.length);
     }
 }
 
@@ -201,49 +266,13 @@ function setupFilterButtons() {
             this.classList.remove('border', 'border-gray-300', 'hover:bg-gray-50');
             this.classList.add('bg-gray-900', 'text-white');
             
+            // 重置显示状态
+            showAllPapers = false;
+            
             // 更新论文列表
             updatePapers(type);
         });
     });
-}
-
-// 设置查看更多按钮
-function setupViewMoreButton() {
-    const viewMoreButton = document.querySelector('#publications .text-center button');
-    let showingAll = false;
-    
-    if (viewMoreButton) {
-        viewMoreButton.addEventListener('click', function() {
-            const paperList = document.querySelector('#publications .space-y-6');
-            if (!showingAll) {
-                // 显示更多论文
-                const allPapers = papers.all.map(generatePaperHTML).join('');
-                paperList.innerHTML = allPapers;
-                
-                // 更新按钮文本
-                const btnTextCn = this.querySelector('[data-lang="cn"]');
-                const btnTextEn = this.querySelector('[data-lang="en"]');
-                
-                if (btnTextCn) btnTextCn.textContent = '收起';
-                if (btnTextEn) btnTextEn.textContent = 'Collapse';
-                
-                showingAll = true;
-            } else {
-                // 恢复原始显示
-                const currentType = document.querySelector('#publications button.bg-gray-900')?.getAttribute('data-type') || 'all';
-                updatePapers(currentType);
-                
-                // 恢复按钮文本
-                const btnTextCn = this.querySelector('[data-lang="cn"]');
-                const btnTextEn = this.querySelector('[data-lang="en"]');
-                
-                if (btnTextCn) btnTextCn.textContent = '查看更多论文';
-                if (btnTextEn) btnTextEn.textContent = 'View More Papers';
-                
-                showingAll = false;
-            }
-        });
-    }
 }
 
 // 设置平滑滚动
@@ -269,39 +298,6 @@ function setupSmoothScroll() {
             }
         });
     });
-}
-
-// 平滑滚动到联系方式
-document.querySelectorAll('a[href="#contact"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#contact').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// 更新生成论文HTML的函数
-function generatePaperHTML(paper) {
-    const title = currentLang === 'en' ? paper.titleEn : paper.titleCn;
-    const authors = currentLang === 'en' ? paper.authorsEn : paper.authorsCn;
-    
-    return `
-        <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-lg font-medium text-gray-900 mb-2">${title}</h3>
-            <p class="text-gray-600 mb-4">${authors}</p>
-            <div class="flex items-center gap-4 text-sm text-gray-500">
-                <span>${paper.journal}</span>
-                <span>${paper.year}</span>
-                <a href="${paper.doi}" class="text-blue-600 hover:text-blue-800 flex items-center gap-1">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                    DOI
-                </a>
-            </div>
-        </div>
-    `;
 }
 
 // 设置成员卡片点击展开/收起的功能

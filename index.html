@@ -99,7 +99,7 @@
                             </h1>
                             <p class="text-gray-600 text-lg mb-6 leading-relaxed">
                                 <span data-lang="cn">致力于移动感知与智能计算、物联网、空间智能认知与位置服务、计算机网络、网络安全与隐私保护等领域的前沿学术研究</span>
-                                <span data-lang="en" class="hidden">Dedicated to cutting-edge academic research in mobile sensing and intelligent computing, IoT, spatial intelligence and location services, computer networks, and network security and privacy protection</span>
+                                <span data-lang="en" class="hidden">Dedicated to cutting-edge academic research in mobile sensing and intelligent computing, IoT, spatial intelligence and location services</span>
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <a href="#profile" class="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-md">
@@ -160,11 +160,11 @@
                         <span data-lang="cn">个人简介</span>
                         <span data-lang="en" class="hidden">Profile</span>
                     </h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="md:w-1/3">
-                            <img src="img/profile.jpg" alt="牛晓光教授" class="rounded-lg shadow-md w-full">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/6">
+                            <img src="fig/teacher.jpg" alt="牛晓光教授" class="rounded-lg shadow-md w-full h-auto object-cover">
                         </div>
-                        <div class="md:w-2/3">
+                        <div class="md:w-3/4">
                             <h3 class="text-xl font-medium text-gray-900 mb-4">
                                 <span data-lang="cn">牛晓光 教授</span>
                                 <span data-lang="en" class="hidden">Prof. Xiaoguang Niu</span>
@@ -174,8 +174,10 @@
                                 <span data-lang="en" class="hidden">School of Computer Science, Wuhan University, PhD Supervisor</span>
                             </p>
                             <div class="space-y-4 text-gray-600">
-                                <p data-lang="cn">牛晓光，武汉大学计算机学院教授，博士生导师。主要研究方向包括移动感知与智能计算、物联网技术、空间智能认知与位置服务等。在IEEE TMC、IEEE TPAMI等国际顶级期刊发表多篇论文，主持多项国家自然科学基金项目。</p>
-                                <p data-lang="en" class="hidden">Xiaoguang Niu is a Professor at the School of Computer Science, Wuhan University, and a PhD supervisor. His main research interests include mobile sensing and intelligent computing, IoT technology, spatial intelligence and location services. He has published multiple papers in top international journals such as IEEE TMC and IEEE TPAMI, and has led several National Natural Science Foundation of China projects.</p>
+                                <p data-lang="cn">牛晓光教授是武汉大学计算机学院的资深教授，CCF、IEEE、ACM会员，并担任CCF物联网专委会委员及教育部创新团队成员。他的研究领域涵盖移动感知与智能计算、物联网、空间智能认知与位置服务、计算机网络、网络安全与隐私保护，以及模式识别和人工智能在移动计算与位置服务中的应用。</p>
+                                <p data-lang="cn">牛教授主持了多项重要科研项目，包括国家自然科学基金、国家重点研发计划项目子课题、湖北省自然科学基金、湖北省教改项目，以及教育部重点实验室开放基金。他作为研究骨干获得了中国测绘科技进步特等奖和北京市科技进步三等奖，并在国际期刊和会议上发表了30余篇论文，其中SCI检索论文达21篇。此外，他还担任多个国际会议和SCI期刊的审稿人。</p>
+                                <p data-lang="en" class="hidden">Prof. Xiaoguang Niu is a distinguished professor at the School of Computer Science, Wuhan University, and a member of CCF, IEEE, and ACM. He serves as a committee member of CCF IoT and a member of the Ministry of Education's innovation team. His research areas include mobile sensing and intelligent computing, IoT, spatial intelligence and location services, computer networks, network security and privacy protection, as well as the application of pattern recognition and AI in mobile computing and location services.</p>
+                                <p data-lang="en" class="hidden">Prof. Niu has led numerous significant research projects, including the National Natural Science Foundation, sub-projects of the National Key R&D Program, Hubei Provincial Natural Science Foundation, Hubei Provincial Education Reform Project, and the Ministry of Education Key Laboratory Open Fund. As a key researcher, he has received the China Surveying and Mapping Science and Technology Progress Special Award and the Beijing Science and Technology Progress Third Prize. He has published over 30 papers in international journals and conferences, with 21 SCI-indexed papers. Additionally, he serves as a reviewer for several international conferences and SCI journals.</p>
                             </div>
                         </div>
                     </div>
@@ -270,13 +272,13 @@
                     </div>
 
                     <!-- 论文列表 -->
-                    <div class="space-y-6">
+                    <div class="space-y-6" id="publications-list">
                         <!-- 论文内容将由JavaScript动态生成 -->
                     </div>
 
                     <!-- 查看更多按钮 -->
                     <div class="text-center mt-8">
-                        <button class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800">
+                        <button id="view-more-papers" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800">
                             <span data-lang="cn">查看更多论文</span>
                             <span data-lang="en" class="hidden">View More Papers</span>
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -474,6 +476,84 @@
                 </div>
             </section>
 
+            <!-- 团队招生部分 -->
+            <section id="team" class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+                        <span data-lang="cn">团队招生</span>
+                        <span data-lang="en" class="hidden">Join Us</span>
+                    </h2>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-medium text-gray-900 mb-3">
+                                    <span data-lang="cn">招生信息</span>
+                                    <span data-lang="en" class="hidden">Recruitment Information</span>
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    <span data-lang="cn">
+                                        我们课题组长期招收博士生、硕士生和本科生加入我们的研究团队。我们致力于移动感知与智能计算、物联网、空间智能认知与位置服务等领域的前沿研究，为学生提供良好的科研环境和国际交流机会。
+                                    </span>
+                                    <span data-lang="en" class="hidden">
+                                        Our research group is continuously recruiting PhD students, Master students, and undergraduate students to join our team. We are dedicated to cutting-edge research in mobile sensing and intelligent computing, IoT, spatial intelligence and location services, providing students with excellent research environment and international exchange opportunities.
+                                    </span>
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-medium text-gray-900 mb-3">
+                                    <span data-lang="cn">招生要求</span>
+                                    <span data-lang="en" class="hidden">Requirements</span>
+                                </h3>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                    <li>
+                                        <span data-lang="cn">具有扎实的计算机科学基础，对科研有浓厚兴趣</span>
+                                        <span data-lang="en" class="hidden">Solid foundation in computer science and strong interest in research</span>
+                                    </li>
+                                    <li>
+                                        <span data-lang="cn">具备良好的编程能力，熟悉至少一种编程语言（如C/C++、Python、Java等）</span>
+                                        <span data-lang="en" class="hidden">Good programming skills, proficient in at least one programming language (e.g., C/C++, Python, Java)</span>
+                                    </li>
+                                    <li>
+                                        <span data-lang="cn">有较强的英语读写能力，能够阅读英文文献并撰写英文论文</span>
+                                        <span data-lang="en" class="hidden">Strong English reading and writing skills, able to read English literature and write papers in English</span>
+                                    </li>
+                                    <li>
+                                        <span data-lang="cn">有相关研究经验或发表过相关论文者优先</span>
+                                        <span data-lang="en" class="hidden">Priority given to those with relevant research experience or published papers</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-medium text-gray-900 mb-3">
+                                    <span data-lang="cn">申请方式</span>
+                                    <span data-lang="en" class="hidden">How to Apply</span>
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    <span data-lang="cn">
+                                        请将您的个人简历、成绩单、研究计划和代表性论文（如有）发送至邮箱：xiaoguang.niu@whu.edu.cn，邮件主题请注明"申请加入课题组-姓名-学历层次"。
+                                    </span>
+                                    <span data-lang="en" class="hidden">
+                                        Please send your CV, transcript, research plan, and representative papers (if any) to: xiaoguang.niu@whu.edu.cn. Please specify "Application to Join Research Group-Name-Degree Level" in the email subject.
+                                    </span>
+                                </p>
+                            </div>
+                            
+                            <div class="flex justify-center mt-6">
+                                <a href="#contact" class="px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 inline-flex items-center gap-2">
+                                    <span data-lang="cn">联系我们</span>
+                                    <span data-lang="en" class="hidden">Contact Us</span>
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 联系方式部分 -->
             <section id="contact" class="py-16 bg-white">
                 <div class="container mx-auto px-4">
@@ -514,36 +594,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-medium text-gray-900 mb-4">
-                                <span data-lang="cn">留言咨询</span>
-                                <span data-lang="en" class="hidden">Send a Message</span>
-                            </h3>
-                            <form class="space-y-4">
-                                <div>
-                                    <label class="block text-gray-700 mb-2">
-                                        <span data-lang="cn">姓名</span>
-                                        <span data-lang="en" class="hidden">Name</span>
-                                    </label>
-                                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2">Email</label>
-                                    <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2">
-                                        <span data-lang="cn">留言内容</span>
-                                        <span data-lang="en" class="hidden">Message</span>
-                                    </label>
-                                    <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"></textarea>
-                                </div>
-                                <button type="submit" class="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800">
-                                    <span data-lang="cn">发送</span>
-                                    <span data-lang="en" class="hidden">Send</span>
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </div>
